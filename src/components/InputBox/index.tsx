@@ -26,7 +26,7 @@ export default function InputBox(props: Props) {
   // variable: 메세지 클래스 //
   const messageClass = `message ${isErrorMessage ? 'error' : 'success'}`;
   // variable: 버튼 클래스 //
-  const buttonClasss = `button ${isButtonActive ? 'second' : 'disable'}`;
+  const buttonClass = `button ${isButtonActive ? 'second' : 'disable'}`
 
   // render: 공통 인풋 박스 컴포넌트 //
   return (
@@ -34,9 +34,9 @@ export default function InputBox(props: Props) {
       <div className='label'>{label}</div>
       <div className='input-contents'>
         <div className='input-area'>
-          <input type={type} value={value} placeholder={placeholder} onChange={onChange} readOnly={readOnly}/>
-          {onButtonClick && buttonName &&
-          <div className={buttonClasss} onClick={onButtonClick}>{buttonName}</div>
+          <input type={type} value={value} placeholder={placeholder} onChange={onChange} readOnly={readOnly} />
+          {onButtonClick && buttonName && 
+          <div className={buttonClass} onClick={onButtonClick}>{buttonName}</div>
           }
         </div>
         <div className={messageClass}>{message}</div>
